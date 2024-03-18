@@ -16,7 +16,8 @@ df_home_values = pd.DataFrame(home_values)
 
 # clean the data
 clean_df_home_values = df_home_values.dropna()
-print(clean_df_home_values.head())
+pd.options.display.float_format = '{:,.2f}'.format
+print(clean_df_home_values.head(30))
 
 print(f'df shape: {clean_df_home_values.shape}')
 
