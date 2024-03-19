@@ -27,6 +27,10 @@ def signup():
     pass
 
 
+@app.route("/lasher-enterprises")
+def lasher():
+    return render_template("lasher-enterprises.html")
+
 
 
 
