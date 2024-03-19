@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Tanner will start API work
 # after comfortable save spot
 # git add . --> staging will turn to green
