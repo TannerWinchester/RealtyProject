@@ -4,6 +4,7 @@
 # git commit -m 'comment'
 # git push origin tanner --> will push to my branch in github
 # finally later on when ready --> git merge feature --> git push feature
+import json
 
 ### explore API calls
 
@@ -51,13 +52,24 @@ def school_search():
     }
 
     res = requests.get(endpoint, params=params)
-    school_data = res.json()
-    print(school_data['schoolList'][0])
+    data = res.json()
 
-    # flattened_data = json_normalize(school_data)
-    #
-    # df_schools = pd.DataFrame(flattened_data)
-    # print(df_schools.head())
+    # data fields
+    school_name = data['schoolName']
+    phone = data['phone']
+    address = data['address']['street']
+    city = data['address']['city']
+    state = data['address']['state']
+    zip_code = data['address']['zip']
+
+    print(f'School name: {school_name}')
+    print(f'Phone:{phone}')
+    print(f'Address: {address}')
+    print(f'City: {city}')
+    print(f'State: {state}')
+    print(f'Zip Code: {zip_code}')
+
+
 
 
 school_search()
