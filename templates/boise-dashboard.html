@@ -1063,7 +1063,7 @@
 													</svg>
 												</span>
 												<div>
-													<p class="fs-14 mb-1">Boise Market Data</p>
+													<p class="fs-14 mb-1">Boise Market Data 2012 - 2024</p>
 												</div>
 											</div>
 										</div>
@@ -1422,10 +1422,10 @@
 		var options = {
           series: [{
           name: 'Housing Market Price',
-          data: {{ chart_data.price }}
+          data: {{ chart_data.price | tojson }}
         }, {
-          name: 'Years',
-          data: '>>>> NEEDS CODE INSERTED <<<<<'
+          name: 'Year',
+          data: {{ chart_data.year | tojson}}
         }],
           chart: {
           height: 350,
@@ -1465,7 +1465,7 @@
 			 formatter: function(y) {
 				if (y >= 1000000) {
 					return (y / 1000000).toFixed(1) + "m";
-				} else if (y >= 1000) {
+				} else if (y >= 2030) {
 					return (y / 1000).toFixed(0) + "k";
 				} else {
 					return y.toFixed(0);
@@ -1474,8 +1474,8 @@
 		  },
 		},
 		xaxis: {
-          type: 'month',
-          categories: '>>>>>> NEEDS CODE INSERTED <<<<<<'
+          type: 'year',
+          categories: {{ chart_data.year | tojson }}
         },
 		colors: ['#3B4CB8','#37D159'],
 		fill: {

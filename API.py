@@ -5,7 +5,7 @@
 # git push origin tanner --> will push to my branch in GitHub
 # finally later on when ready --> git merge feature --> git push feature
 
-
+import json
 import pandas as pd
 from pandas import json_normalize
 import requests
@@ -161,16 +161,16 @@ class BoiseMedianPrice:
         print(boise_median_prices)
 
         # values of all months column
-        months = self.df_boise['Month of Period End'][::12]
-        # print(months)
+        months_data = self.df_boise['Month of Period End'][::12]
+        # print(months_data)
 
         # drops the index key and converts into a list of months
-        clean_months_data = months.values.tolist()
-        print(clean_months_data)
+        months = months_data.values.tolist()
+        years = [datetime.strptime(month, "%B %Y").year for month in months]
 
         chart_data = {
             'price': boise_median_prices,
-            'month': months
+            'year': years
         }
 
-        return boise_median_prices, months, chart_data
+        return boise_median_prices, years, chart_data
