@@ -4,9 +4,10 @@
 from flask import Flask, render_template, redirect, url_for, request, abort, flash
 from flask_bootstrap import Bootstrap5
 from flask_sqlalchemy import SQLAlchemy
+from API import BoiseMedianPrice
 
 app = Flask(__name__)
-
+boise_median = BoiseMedianPrice()
 
 @app.route("/")
 def home():
@@ -32,7 +33,11 @@ def lasher():
     return render_template("lasher-enterprises.html")
 
 
+@app.route("/boise")
+def boise():
+    boise_median.get_data()
 
+    return render_template("boise-enterprises.html")
 
 
 

@@ -144,17 +144,19 @@ def school_search():
     print(f'Zip Code: {zip_code}')
 
 
-df_boise = pd.read_csv('data/boise-market-data.csv')
+class BoiseMedianPrice:
+    def __init__(self):
+        self.df_boise = pd.read_csv('data/boise-market-data.csv')
 
-# convert entire median price column into integers
-df_boise['Median Sale Price'] = df_boise['Median Sale Price'].str.replace('$', '').str.replace('K', '').astype(int) * 1000
+    def get_data(self):
+        self.df_boise['Median Sale Price'] = self.df_boise['Median Sale Price'].str.replace('$', '').str.replace('K',
+                                                                                                                 '').astype(
+            int) * 1000
 
-# values of all median sale price column
-boise_median_prices = df_boise['Median Sale Price']
-# values of all months column
-months = df_boise['Month of Period End']
+        # values of all median sale price column
+        boise_median_prices = self.df_boise['Median Sale Price']
 
+        # values of all months column
+        months = self.df_boise['Month of Period End']
 
-
-
-
+        return boise_median_prices, months
