@@ -102,73 +102,73 @@
 		var chartTimelineRender =  new ApexCharts(document.querySelector("#chartTimeline"), optionsTimeline);
 		 chartTimelineRender.render();
 	}
-	var chartBar = function() {
-		var options = {
-          series: [{
-          name: 'series1',
-          data: [800, 600, 1200, 500, 400, 680, 700,550,700]
-        }, {
-          name: 'series2',
-          data: [1000, 700, 1500, 550, 500, 800, 850,620,950]
-        }],
-          chart: {
-          height: 350,
-          type: 'area',
-		  toolbar: {
-			show: false,
-		  },
-        },
-        dataLabels: {
-          enabled: false
-        },
-        stroke: {
-          curve: 'smooth',
-		  width: 5,
-		  colors: ['#3B4CB8','#37D159'],
-        },
-		legend: {
-			show: false,
-		},
-		 markers: {
-          size: 0,
-		  border:0,
-		  colors: ['#3B4CB8','#37D159'],
-          hover: {
-            size: 8,
-          }
-        },
-		yaxis: {
-			labels: {
-		   style: {
-			  colors: '#3e4954',
-			  fontSize: '14px',
-			   fontFamily: 'Poppins',
-			  fontWeight: 100,
-			  
-			},
-			 formatter: function (y) {
-					  return y.toFixed(0) + "k";
-					}
-		  },
-		},
-		xaxis: {
-          type: 'month',
-          categories: ["April", "May", "June", "July", "August", "September", "October", "November", "Dec.."]
-        },
-		colors: ['#3B4CB8','#37D159'],
-		fill: {
-			colors: ['#3B4CB8','#37D159'],
-		},
-        tooltip: {
-          x: {
-            format: 'month'
-          },
-        },
-        };
-
-        var chart = new ApexCharts(document.querySelector("#chartBar"), options);
-        chart.render();
-	}
+//	var chartBar = function() {
+//		var options = {
+//          series: [{
+//          name: 'series1',
+//          data: [800, 600, 1200, 500, 400, 680, 700,550,700]
+//        }, {
+//          name: 'series2',
+//          data: [1000, 700, 1500, 550, 500, 800, 850,620,950]
+//        }],
+//          chart: {
+//          height: 350,
+//          type: 'area',
+//		  toolbar: {
+//			show: false,
+//		  },
+//        },
+//        dataLabels: {
+//          enabled: false
+//        },
+//        stroke: {
+//          curve: 'smooth',
+//		  width: 5,
+//		  colors: ['#3B4CB8','#37D159'],
+//        },
+//		legend: {
+//			show: false,
+//		},
+//		 markers: {
+//          size: 0,
+//		  border:0,
+//		  colors: ['#3B4CB8','#37D159'],
+//          hover: {
+//            size: 8,
+//          }
+//        },
+//		yaxis: {
+//			labels: {
+//		   style: {
+//			  colors: '#3e4954',
+//			  fontSize: '14px',
+//			   fontFamily: 'Poppins',
+//			  fontWeight: 100,
+//
+//			},
+//			 formatter: function (y) {
+//					  return y.toFixed(0) + "k";
+//					}
+//		  },
+//		},
+//		xaxis: {
+//          type: 'month',
+//          categories: ["April", "May", "June", "July", "August", "September", "October", "November", "Dec.."]
+//        },
+//		colors: ['#3B4CB8','#37D159'],
+//		fill: {
+//			colors: ['#3B4CB8','#37D159'],
+//		},
+//        tooltip: {
+//          x: {
+//            format: 'month'
+//          },
+//        },
+//        };
+//
+//        var chart = new ApexCharts(document.querySelector("#chartBar"), options);
+//        chart.render();
+//	}
 	var monocromeChart = function(){
 		var options = {
           series: [38, 62],

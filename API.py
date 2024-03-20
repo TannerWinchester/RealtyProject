@@ -7,7 +7,7 @@ import pandas
 import pandas as pd
 import numpy as np
 from datetime import datetime, timedelta
-link = "https://api.schooldigger.com/v2.0/rankings/schools/{st}"
+# link = "https://api.schooldigger.com/v2.0/rankings/schools/{st}"
 
 # def school_search():
 #     params = {
@@ -29,11 +29,26 @@ link = "https://api.schooldigger.com/v2.0/rankings/schools/{st}"
 
 import pandas as pd
 
-df = pandas.read_csv("dummy_real_estate_data_homes_and_apartments.csv")
-# Save to CSV
+class lasherData():
+    def __init__(self):
+        self.df = pd.read_csv("dummy_real_estate_data_homes_and_apartments.csv")
 
-# Display DataFrame
-print(df)
+    def costs(self):
+       total_cost = self.df["Actual Cost"].sum()
+       total_rev = self.df["Sales Price"].sum()
+       chart_data = {
+           'costs': [],
+           'revenue': [],
+       }
+       for cost in self.df['Actual Cost'].head(12):
+           chart_data['costs'].append(cost)
+
+       for rev in self.df['Sales Price'].head(12):
+           chart_data['revenue'].append(rev)
+       return total_cost, total_rev, chart_data
+
+
+
 
 
 
