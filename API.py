@@ -9,6 +9,8 @@
 import pandas as pd
 from pandas import json_normalize
 import requests
+import numpy as np
+from datetime import datetime, timedelta
 
 # schooldigger API endpoint
 endpoint = "https://api.schooldigger.com/v2.0/rankings/schools/{st}"
@@ -142,41 +144,17 @@ def school_search():
     print(f'Zip Code: {zip_code}')
 
 
-school_search()
+df_boise = pd.read_csv('data/boise-market-data.csv')
+
+# convert entire median price column into integers
+df_boise['Median Sale Price'] = df_boise['Median Sale Price'].str.replace('$', '').str.replace('K', '').astype(int) * 1000
+
+# values of all median sale price column
+boise_median_prices = df_boise['Median Sale Price']
+# values of all months column
+months = df_boise['Month of Period End']
 
 
-# # Tanner will start API work
-#
-#
-#
-import pandas
-import pandas as pd
-import numpy as np
-from datetime import datetime, timedelta
-link = "https://api.schooldigger.com/v2.0/rankings/schools/{st}"
 
-# def school_search():
-#     params = {
-#         "q": "Boise",
-#         "st": "ID",
-#         "appID": "f607f499",
-#         "appKey": "da66c0739308a6fef6f4a4e37d0a2c55"
-#     }
-#     query = requests.get(link, params=params)
-#     print(query.json())
-#
-# school_search()
 
-# df = pd.read_csv("dummy_real_estate_data_with_projects.csv")
-#
-# test = df.columns
-#
-# print(test)
 
-import pandas as pd
-
-df = pandas.read_csv("dummy_real_estate_data_homes_and_apartments.csv")
-# Save to CSV
-
-# Display DataFrame
-print(df)
