@@ -35,9 +35,11 @@ def lasher():
 
 @app.route("/boise")
 def boise():
-    boise_median.get_data()
-
-    return render_template("boise-enterprises.html")
+    prices, months, chart_data = boise_median.get_data()
+    boise_prices = [f"{price:,}" for price in prices]
+    boise_months = months
+    return render_template("boise-dashboard.html", boise_prices=boise_prices, boise_months=boise_months,
+                           chart_data=chart_data)
 
 
 

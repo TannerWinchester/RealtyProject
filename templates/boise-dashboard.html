@@ -1063,21 +1063,7 @@
 													</svg>
 												</span>
 												<div>
-													<p class="fs-14 mb-1">Total Sale</p>
-													<span class="fs-18 text-black font-w700">2,346 Unit</span>
-												</div>
-											</div>
-											<div class="d-flex mb-4 align-items-center">
-												<span class="rounded me-3 bg-success p-3">
-													<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-														<path d="M10.3458 25.7292H1.35412C0.758283 25.7292 0.270782 25.2417 0.270782 24.6458V9.69583C0.270782 9.42499 0.379116 9.09999 0.595783 8.93749L9.58745 0.541659C9.91245 0.270825 10.3458 0.162492 10.725 0.324992C11.1583 0.541659 11.375 0.920825 11.375 1.35416V24.7C11.375 25.2417 10.8875 25.7292 10.3458 25.7292ZM2.38328 23.6167H9.26245V3.79166L2.38328 10.1833V23.6167Z" fill="white"/>
-														<path d="M24.6458 25.7292H10.2916C9.69578 25.7292 9.20828 25.2417 9.20828 24.6458V11.9167C9.20828 11.3208 9.69578 10.8333 10.2916 10.8333H24.6458C25.2416 10.8333 25.7291 11.3208 25.7291 11.9167V24.7C25.7291 25.2417 25.2416 25.7292 24.6458 25.7292ZM11.375 23.6167H23.6166V12.9458H11.375V23.6167Z" fill="white"/>
-														<path d="M19.5541 25.7292H15.3833C14.7874 25.7292 14.2999 25.2417 14.2999 24.6458V18.0375C14.2999 17.4417 14.7874 16.9542 15.3833 16.9542H19.5541C20.1499 16.9542 20.6374 17.4417 20.6374 18.0375V24.6458C20.6374 25.2417 20.1499 25.7292 19.5541 25.7292ZM16.4666 23.6167H18.5249V19.1208H16.4666V23.6167Z" fill="white"/>
-													</svg>
-												</span>
-												<div>
-													<p class="fs-14 mb-1">Total Rent</p>
-													<span class="fs-18 text-black font-w700">1,252 Unit</span>
+													<p class="fs-14 mb-1">Boise Market Data</p>
 												</div>
 											</div>
 										</div>
@@ -1431,6 +1417,80 @@
 			}
 		});
 	</script>
+	<script>
+		var chartBar = function() {
+		var options = {
+          series: [{
+          name: 'Housing Market Price',
+          data: {{ chart_data.price }}
+        }, {
+          name: 'Years',
+          data: '>>>> NEEDS CODE INSERTED <<<<<'
+        }],
+          chart: {
+          height: 350,
+          type: 'area',
+		  toolbar: {
+			show: false,
+		  },
+        },
+        dataLabels: {
+          enabled: false
+        },
+        stroke: {
+          curve: 'smooth',
+		  width: 5,
+		  colors: ['#3B4CB8','#37D159'],
+        },
+		legend: {
+			show: false,
+		},
+		 markers: {
+          size: 0,
+		  border:0,
+		  colors: ['#3B4CB8','#37D159'],
+          hover: {
+            size: 8,
+          }
+        },
+		yaxis: {
+			labels: {
+		   style: {
+			  colors: '#3e4954',
+			  fontSize: '14px',
+			   fontFamily: 'Poppins',
+			  fontWeight: 100,
 
+			},
+			 formatter: function(y) {
+				if (y >= 1000000) {
+					return (y / 1000000).toFixed(1) + "m";
+				} else if (y >= 1000) {
+					return (y / 1000).toFixed(0) + "k";
+				} else {
+					return y.toFixed(0);
+				}
+			}
+		  },
+		},
+		xaxis: {
+          type: 'month',
+          categories: '>>>>>> NEEDS CODE INSERTED <<<<<<'
+        },
+		colors: ['#3B4CB8','#37D159'],
+		fill: {
+			colors: ['#3B4CB8','#37D159'],
+		},
+        tooltip: {
+          x: {
+            format: 'year'
+          },
+        },
+        };
+
+        var chart = new ApexCharts(document.querySelector("#chartBar"), options);
+        chart.render();
+	}
+	</script>
 </body>
 </html>

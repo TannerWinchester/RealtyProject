@@ -149,14 +149,28 @@ class BoiseMedianPrice:
         self.df_boise = pd.read_csv('data/boise-market-data.csv')
 
     def get_data(self):
-        self.df_boise['Median Sale Price'] = self.df_boise['Median Sale Price'].str.replace('$', '').str.replace('K',
-                                                                                                                 '').astype(
-            int) * 1000
+        self.df_boise['Median Sale Price'] = self.df_boise['Median Sale Price'].replace({'\$': '', 'K': 'e3'},
+                                                                                        regex=True).astype(
+            float).astype(int)
 
         # values of all median sale price column
-        boise_median_prices = self.df_boise['Median Sale Price']
+        prices = self.df_boise['Median Sale Price'][::12]
+
+        # grabs all values from the prices section and turns it into a list
+        boise_median_prices = prices.values.tolist()
+        print(boise_median_prices)
 
         # values of all months column
-        months = self.df_boise['Month of Period End']
+        months = self.df_boise['Month of Period End'][::12]
+        # print(months)
 
-        return boise_median_prices, months
+        # drops the index key and converts into a list of months
+        clean_months_data = months.values.tolist()
+        print(clean_months_data)
+
+        chart_data = {
+            'price': boise_median_prices,
+            'month': months
+        }
+
+        return boise_median_prices, months, chart_data
