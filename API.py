@@ -11,6 +11,7 @@ from pandas import json_normalize
 import requests
 import numpy as np
 from datetime import datetime, timedelta
+import random
 
 # schooldigger API endpoint
 endpoint = "https://api.schooldigger.com/v2.0/rankings/schools/{st}"
@@ -174,3 +175,46 @@ class BoiseMedianPrice:
         }
 
         return boise_median_prices, years, chart_data
+
+
+class ProjectTracker:
+    def __init__(self):
+        # create fictional data for total cost (in hundreds of thousands)
+        self.total_cost = [random.randint(100, 600) * 1000 for _ in range(13)]
+
+        # create fictional data for build projects (up to 15)
+        self.build_projects = [random.randint(1, 10) for _ in range(13)]
+
+        # print("Total Cost:", self.total_cost)
+        # print("Build Projects:", self.build_projects)
+
+    def get_total_costs(self):
+        # list of costs for each project
+        investment_cost_list = self.total_cost
+        print(investment_cost_list)
+
+        total_investment_added = sum(self.total_cost)
+        total_investment = "${:,.2f}".format(total_investment_added)
+        print(total_investment)
+
+        projects_list = self.build_projects
+        print('project LIST: ', projects_list)
+
+        total_projects = sum(projects_list)
+        print('total pojects: ', total_projects)
+
+        bar_chart_data = {
+            # sum of all projects
+            'total_investment': total_investment,
+            # list of projects expenses
+            'project_list': projects_list,
+            # total number of projects
+            'total_projects': total_projects,
+            'investment_cost_list': investment_cost_list
+        }
+
+        return total_investment, projects_list, total_projects, investment_cost_list, bar_chart_data
+
+
+i = ProjectTracker()
+i.get_total_costs()
