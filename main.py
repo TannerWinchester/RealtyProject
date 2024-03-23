@@ -44,11 +44,10 @@ def boise():
     boise_years = years
 
     # Total costs of projects and project tracker graph
-    total_investment, projects_list, total_projects, investment_cost_list, bar_chart_data = project_tracker.get_total_costs()
+    bar_chart_data = project_tracker.get_total_costs()
 
     return render_template("boise-dashboard.html", boise_prices=boise_prices, boise_months=boise_years,
-                           chart_data=chart_data, total_investment=total_investment, projects_list=projects_list, total_projects=total_projects, investment_cost_list=investment_cost_list,
-                           bar_chart_data=bar_chart_data)
+                           chart_data=chart_data, bar_chart_data=bar_chart_data)
 
 
 if __name__ == "__main__":

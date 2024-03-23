@@ -201,7 +201,7 @@ class ProjectTracker:
         print('project LIST: ', projects_list)
 
         total_projects = sum(projects_list)
-        print('total pojects: ', total_projects)
+        print('total projects: ', total_projects)
 
         bar_chart_data = {
             # sum of all projects
@@ -213,7 +213,7 @@ class ProjectTracker:
             'investment_cost_list': investment_cost_list
         }
 
-        return total_investment, projects_list, total_projects, investment_cost_list, bar_chart_data
+        return bar_chart_data
 
 
 i = ProjectTracker()
