@@ -47,6 +47,10 @@ class lasherData():
            chart_data['revenue'].append(rev)
        return total_cost, total_rev, chart_data
 
+    def monthly_rev(self):
+        total_cost = self.df["Actual Cost"].sum()
+        total_rev = self.df["Sales Price"].sum()
+
 
 
 

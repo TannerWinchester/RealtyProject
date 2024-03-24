@@ -650,11 +650,11 @@
 				type: 'line',
 				data: {
 					defaultFontFamily: 'Poppins',
-					labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+					labels: ["1", "5", "10", "15", "20", "25", "30"],
 					datasets: [
 						{
-							label: "My First dataset",
-							data: [25, 20, 60, 41, 66, 45, 80],
+							label: "This Month",
+							data: [300000, 170000, 250000, 280000, 600000, 330000, 400000],
 							borderColor: 'rgb(59, 76, 184)',
 							borderWidth: "1",
 							tension:0.5,
@@ -662,8 +662,8 @@
 							backgroundColor: 'rgba(59, 76, 184, .5)'
 						}, 
 						{
-							label: "My First dataset",
-							data: [5, 25, 20, 41, 36, 75, 70],
+							label: "Last Month",
+							data: [110000, 300000, 190000, 270000, 400000, 100000, 350000],
 							borderColor: 'rgb(255, 159, 15)',
 							borderWidth: "1",
 							tension:0.5,
@@ -678,11 +678,11 @@
 					}, 
 					scales: {
 						y: {
-							max: 100, 
+							max: 1000000,
 							min: 0, 
 							ticks: {
-								beginAtZero: true, 
-								stepSize: 20, 
+								beginAtZero: false,
+								stepSize: 20,
 								padding: 10
 							}
 						},
