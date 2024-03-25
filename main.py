@@ -36,6 +36,11 @@ def lasher():
     total_rev = f"{raw_rev:,}"
     return render_template("lasher-enterprises.html", total_cost=total_cost, total_rev=total_rev, chart_data=chart_data)
 
+@app.route("/lasher-analytics")
+def lasherAnalytics():
+    chart_data = lash.forecast_profit_and_costs()
+    return render_template("lasher-analytics.html", chart_data=chart_data)
+
 @app.route("/test")
 def test():
     return render_template("chart-chartjs.html")

@@ -173,131 +173,131 @@
         chart.render();
 		
 	}
-	var chartBar = function(){
-		var options = {
-          series: [{
-          name: 'series2',
-          data: [210, 320, 130, 320, 150, 310, 120,620,320]
-        }],
-          chart: {
-          height: 350,
-          type: 'area',
-		  toolbar:false
-        },
-        dataLabels: {
-          enabled: false
-        },
-        stroke: {
-          curve: 'smooth',
-		  width: 5,
-		  colors: ['#37D159'],
-        },
-		legend: {
-			show: false,
-		},
-		 markers: {
-          size: 0,
-		  border:0,
-		  colors: ['#37D159'],
-          hover: {
-            size: 8,
-          }
-        },
-		yaxis: {
-			labels: {
-		   style: {
-			  colors: '#3e4954',
-			  fontSize: '14px',
-			   fontFamily: 'Poppins',
-			  fontWeight: 100,
-			  
-			},
-			 formatter: function (y) {
-					  return y.toFixed(0) + "k";
-					}
-		  },
-		},
-		colors:['#37D159'],
-        xaxis: {
-          type: 'month',
-          categories: ["April", "May", "June", "July", "August", "September", "October", "November", "Dec.."]
-        },
-		fill: {
-			colors: ['#37D159'],
-		},
-        tooltip: {
-          x: {
-            format: 'month'
-          },
-        },
-        };
-
-        var chart = new ApexCharts(document.querySelector("#chartBar"), options);
-        chart.render();	
-	}
-	var chartBar2 = function(){
-			var options = {
-          series: [{
-          name: 'series1',
-          data: [800, 440, 360, 510, 420, 680, 400,200,700]
-        }],
-          chart: {
-          height: 350,
-          type: 'area',
-		  toolbar:false
-        },
-        dataLabels: {
-          enabled: false
-        },
-        stroke: {
-          curve: 'smooth',
-		  width: 5,
-		  colors: ['#3B4CB8'],
-        },
-		legend: {
-			show: false,
-		},
-		 markers: {
-          size: 0,
-		  border:0,
-		  colors: ['#3B4CB8'],
-          hover: {
-            size: 8,
-          }
-        },
-		yaxis: {
-			labels: {
-		   style: {
-			  colors: '#3e4954',
-			  fontSize: '14px',
-			   fontFamily: 'Poppins',
-			  fontWeight: 100,
-			  
-			},
-			 formatter: function (y) {
-					  return y.toFixed(0) + "k";
-					}
-		  },
-		},
-        xaxis: {
-          type: 'month',
-          categories: ["April", "May", "June", "July", "August", "September", "October", "November", "Dec.."]
-        },
-		fill: {
-			colors: ['#3B4CB8'],
-		},
-		colors:['#3B4CB8'],
-        tooltip: {
-			 
-          x: {
-            format: 'month'
-          },
-        },
-        };
-
-        var chart = new ApexCharts(document.querySelector("#chartBar2"), options);
-        chart.render();
-	}
+//	var chartBar = function(){
+//		var options = {
+//          series: [{
+//          name: 'series2',
+//          data: [210, 320, 130, 320, 150, 310, 120,620,320]
+//        }],
+//          chart: {
+//          height: 350,
+//          type: 'area',
+//		  toolbar:false
+//        },
+//        dataLabels: {
+//          enabled: false
+//        },
+//        stroke: {
+//          curve: 'smooth',
+//		  width: 5,
+//		  colors: ['#37D159'],
+//        },
+//		legend: {
+//			show: false,
+//		},
+//		 markers: {
+//          size: 0,
+//		  border:0,
+//		  colors: ['#37D159'],
+//          hover: {
+//            size: 8,
+//          }
+//        },
+//		yaxis: {
+//			labels: {
+//		   style: {
+//			  colors: '#3e4954',
+//			  fontSize: '14px',
+//			   fontFamily: 'Poppins',
+//			  fontWeight: 100,
+//
+//			},
+//			 formatter: function (y) {
+//					  return y.toFixed(0) + "k";
+//					}
+//		  },
+//		},
+//		colors:['#37D159'],
+//        xaxis: {
+//          type: 'month',
+//          categories: ["April", "May", "June", "July", "August", "September", "October", "November", "Dec.."]
+//        },
+//		fill: {
+//			colors: ['#37D159'],
+//		},
+//        tooltip: {
+//          x: {
+//            format: 'month'
+//          },
+//        },
+//        };
+//
+//        var chart = new ApexCharts(document.querySelector("#chartBar"), options);
+//        chart.render();
+//	}
+//	var chartBar2 = function(){
+//			var options = {
+//          series: [{
+//          name: 'series1',
+//          data: [800, 440, 360, 510, 420, 680, 400,200,700]
+//        }],
+//          chart: {
+//          height: 350,
+//          type: 'area',
+//		  toolbar:false
+//        },
+//        dataLabels: {
+//          enabled: false
+//        },
+//        stroke: {
+//          curve: 'smooth',
+//		  width: 5,
+//		  colors: ['#3B4CB8'],
+//        },
+//		legend: {
+//			show: false,
+//		},
+//		 markers: {
+//          size: 0,
+//		  border:0,
+//		  colors: ['#3B4CB8'],
+//          hover: {
+//            size: 8,
+//          }
+//        },
+//		yaxis: {
+//			labels: {
+//		   style: {
+//			  colors: '#3e4954',
+//			  fontSize: '14px',
+//			   fontFamily: 'Poppins',
+//			  fontWeight: 100,
+//
+//			},
+//			 formatter: function (y) {
+//					  return y.toFixed(0) + "k";
+//					}
+//		  },
+//		},
+//        xaxis: {
+//          type: 'month',
+//          categories: ["April", "May", "June", "July", "August", "September", "October", "November", "Dec.."]
+//        },
+//		fill: {
+//			colors: ['#3B4CB8'],
+//		},
+//		colors:['#3B4CB8'],
+//        tooltip: {
+//
+//          x: {
+//            format: 'month'
+//          },
+//        },
+//        };
+//
+//        var chart = new ApexCharts(document.querySelector("#chartBar2"), options);
+//        chart.render();
+//	}
 	var widgetChart1 = function(){
 		if(jQuery('#widgetChart1').length > 0 ){
 			const chart_widget_1 = document.getElementById("widgetChart1").getContext('2d');
